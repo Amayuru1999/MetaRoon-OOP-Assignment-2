@@ -1,16 +1,16 @@
-export class Book{
-    private id:number;
-    private title:string;
-    private author:string;
-    private ISBN:string;
+import { LibraryItem } from './LibraryItem';
 
-    constructor(id: number, title: string, author: string, ISBN: string){
-        this.id = id;
-        this.title = title;
+export class Book extends LibraryItem {
+    private author: string;
+    private ISBN: string;
+
+    constructor(id: number, title: string, author: string, ISBN: string) {
+        super(id, title);
         this.author = author;
         this.ISBN = ISBN;
     }
-    public display():void{
-        console.log(`ID: ${this.id}, Title: ${this.title}, Author: ${this.author}, ISBN: ${this.ISBN}`);
+
+    public display(): void {
+        console.log(`Book: ${this.title} by ${this.author} -> ISBN: ${this.ISBN}`);
     }
 }
