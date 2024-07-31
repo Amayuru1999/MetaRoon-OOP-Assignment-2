@@ -1,9 +1,9 @@
-import {Book} from "./Book";
+import {LibraryItem} from "./LibraryItem";
 
 
 export class LibraryCatalogue{
     private static instance: LibraryCatalogue;
-    private libraryItems: Book[] = [];
+    private libraryItems: LibraryItem[] = [];
 
     private constructor() {}
 
@@ -14,11 +14,11 @@ export class LibraryCatalogue{
         return LibraryCatalogue.instance;
     }
 
-    public addItem(item: Book):void{
+    public addItem(item: LibraryItem):void{
         this.libraryItems.push(item);
     }
 
     public displayItems():void {
-        this.libraryItems.forEach(book => book.display());
+        this.libraryItems.forEach(item => item.display());
     }
 }

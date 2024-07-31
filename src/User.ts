@@ -28,4 +28,3 @@ export class User{
         console.log(`${this.name} is managing the library`);
     }
 }
-//new git repository
